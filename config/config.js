@@ -1,7 +1,7 @@
 module.exports = {
   mongodbConfig: {
-    url: 'mongodb://localhost:27017',
+    url: 'mongodb://10.140.0.4:27017',
     name: 'newsDB',
-    options: { useNewUrlParser: true }
+    options: { useNewUrlParser: true, useUnifiedTopology: true }
   }
 }
