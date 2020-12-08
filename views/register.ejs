@@ -27,6 +27,7 @@
           <input placeholder="請輸入信箱" name="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
+        <div id="test"></div>
       </div>
       <div class="col s4"></div>
       <div class="col s4">
@@ -49,6 +50,18 @@
        alert('請輸入信箱');
      } else {
        document.getElementById("register").submit();
+    //   var username = { username:  $('input[name="username"]').val() };
+    //   $.ajax({
+    //     data: username,
+    //     url: '/register',
+    //     dataType: 'json',
+    //     type: 'POST',
+    //     cache: false,
+    //     timeout: 5000,
+    //     success: function(data) {
+    //       alert(data)
+    //     }
+    //   })
      }
    }
  </script>

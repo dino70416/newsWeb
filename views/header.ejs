@@ -27,10 +27,11 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo" style="margin-left: 20px">AInews</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% const newsType = ['熱門', '政治', '社會', '國際', '娛樂', '生活', '科技', '財經', '體育'] %>
-        <% const newsLink = ['/', 'politics', 'social', 'international', 'entertainment', 'life', '3C', 'finance', 'sports'] %>
+        <% const newsType = ['政治', '社會', '國際', '娛樂', '生活', '科技', '財經', '體育'] %>
+        <% const newsLink = ['politics', 'social', 'international', 'entertainment', 'life', '3C', 'finance', 'sports'] %>
+        <li><a href="/">熱門</a></li>
         <% for(let i = 0; i < newsType.length; i++) { %>
-          <li><a href="<%= newsLink[i] %>">
+          <li><a href="/news/<%= newsLink[i] %>">
             <%= newsType[i] %>
           </a></li>
         <% } %>
