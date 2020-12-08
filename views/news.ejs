@@ -1,0 +1,30 @@
+<% include header %>
+<div class="row" style="font-family: Microsoft JhengHei;">
+    <% result.forEach(element => { %>
+        <div class="col s6">
+            <div class="z-depth-2">
+              <p>
+                <h5><%= element.title %> </h5>
+                <p style="font-size: x-small;"><%= element.time %> </p>
+                <p><%= element.content %>...
+                  <a href="<%= element.url %>" onclick="pass(this)" target="_blank" class="right-align" id="<%= element._id %>">(繼續閱讀...)</a>
+                </p>
+              </p>
+            </div>
+          </div>
+    <% }) %>
+  </div>
+
+  <script>
+    function pass(obj) {
+      const id = obj.id
+      $.ajax({
+        type: "post",
+        url: "/clicknews",
+        data: {
+          "id": id
+        }
+      })
+    }
+  </script>
+  

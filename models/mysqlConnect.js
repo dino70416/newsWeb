@@ -1,10 +1,16 @@
 const mysql = require('mysql')
+const fs = require('fs')
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'news'
+  host: '34.80.40.14',
+  user: 'dino',
+  password: 'N^LjTs5j*bC#8G!U',
+  database: 'news',
+  ssl: {
+    ca: fs.readFileSync(__dirname + '/../certs/server-ca.pem'),
+    key: fs.readFileSync(__dirname + '/../certs/client-key.pem'),
+    cert: fs.readFileSync(__dirname + '/../certs/client-cert.pem')
+  }
 })
 
 const query = (sql, values) => {
