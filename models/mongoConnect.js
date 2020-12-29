@@ -18,7 +18,7 @@ const ifExistDocuments = (targetDb, targetCollection, query, callback) => {
   const collection = targetDb.collection(targetCollection)
   collection.find(query).toArray((err, result) => {
     if (err) throw err
-    // eslint-disable-next-line standard/no-callback-literal
+    // eslint-disable-next-line node/no-callback-literal
     callback(result.length !== 0)
   })
 }

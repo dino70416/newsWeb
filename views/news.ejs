@@ -6,6 +6,11 @@
               <p>
                 <h5><%= element.title %> </h5>
                 <p style="font-size: x-small;"><%= element.time %> </p>
+                <p>
+                  <a class="waves-effect waves-light btn" href="#" id="<%= element._id %>" onclick="like(this)"><i class="material-icons">thumb_up</i></a>
+                  <a class="waves-effect waves-light btn" href="#" id="<%= element._id %>" onclick="collect(this)"><i class="material-icons">folder</i></a>
+                  <a class="waves-effect waves-light btn" href="#" id="<%= element._id %>" onclick="share(this)"><i class="material-icons">share</i></a>
+                </p>
                 <p><%= element.content %>...
                   <a href="<%= element.url %>" onclick="pass(this)" target="_blank" class="right-align" id="<%= element._id %>">(繼續閱讀...)</a>
                 </p>
@@ -23,6 +28,51 @@
         url: "/clicknews",
         data: {
           "id": id
+        }
+      })
+    }
+    function like(obj) {
+      const id = obj.id
+      $.ajax({
+        type: "post",
+        url: "/like",
+        data: {
+          "id": id
+        },
+        success: function (data) {
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          alert(textStatus)
+        }
+      })
+    }
+    function collect(obj) {
+      const id = obj.id
+      $.ajax({
+        type: "post",
+        url: "/collect",
+        data: {
+          "id": id
+        },
+        success: function (data) {
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          alert(textStatus)
+        }
+      })
+    }
+    function share(obj) {
+      const id = obj.id
+      $.ajax({
+        type: "post",
+        url: "/share",
+        data: {
+          "id": id
+        },
+        success: function (data) {
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          alert(textStatus)
         }
       })
     }

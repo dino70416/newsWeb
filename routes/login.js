@@ -1,9 +1,9 @@
-var express = require('express')
+const express = require('express')
 const { query } = require('../models/mysqlConnect.js')
 const crypto = require('crypto')
 const fetch = require('node-fetch')
 const { URLSearchParams } = require('url')
-var router = express.Router()
+const router = express.Router()
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
         getData(`SELECT * from users WHERE username="${userName}"`, (result) => {
           if (cryptUserPwd === result[0].password) {
             if (result[0].verify_mail === 1) {
-              res.cookie('user', {username: userName}, {maxAge: 600000 , httpOnly: false})
+              res.cookie('user', { username: userName }, { maxAge: 600000, httpOnly: false })
               res.redirect('/')
             } else {
               res.render('login', { mail: 'notverify' })

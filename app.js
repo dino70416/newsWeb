@@ -22,6 +22,7 @@ const verifyRouter = require('./routes/verify')
 // const privacyRouter = require('./routes/privacy')
 const newsRouter = require('./routes/news')
 const clicknewsRouter = require('./routes/clicknews')
+const likeRouter = require('./routes/like')
 
 const app = express()
 
@@ -53,6 +54,7 @@ app.use('/verify', verifyRouter)
 // app.use('/privacy', privacyRouter)
 app.use('/news', newsRouter)
 app.use('/clicknews', clicknewsRouter)
+app.use('/like', likeRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
