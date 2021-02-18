@@ -23,6 +23,8 @@ const verifyRouter = require('./routes/verify')
 const newsRouter = require('./routes/news')
 const clicknewsRouter = require('./routes/clicknews')
 const likeRouter = require('./routes/like')
+const collectRouter = require('./routes/collect')
+const shareRouter = require('./routes/share')
 
 const app = express()
 
@@ -55,6 +57,8 @@ app.use('/verify', verifyRouter)
 app.use('/news', newsRouter)
 app.use('/clicknews', clicknewsRouter)
 app.use('/like', likeRouter)
+app.use('/collect', collectRouter)
+app.use('/share', shareRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
     const newsId = req.body.id
     getData(`SELECT user_id from users WHERE username="${userName}"`, (result) => {
       const userId = result[0].user_id
-      insert('INSERT INTO `like`(user_id, news_id) VALUES(?, ?)', [userId, newsId]).catch(error => {
+      insert('INSERT INTO `share`(user_id, news_id) VALUES(?, ?)', [userId, newsId]).catch(error => {
         if (error) throw error
       })
     })
